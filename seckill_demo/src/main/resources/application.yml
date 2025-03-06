@@ -1,0 +1,41 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: zhouxinji.119
+    hikari:
+      pool-name: seckill_Hikari_Poll
+      minimum-idle: 5
+      idle-timeout: 60000
+      maximum-pool-size: 10
+      auto-commit: true
+      #连接最大存活时间
+      max-lifetime: 180000
+      #连接超时时间，默认 30000（30 秒）
+      connection-timeout: 30000
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    connect-timeout: 10000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 10000ms
+        max-idle: 200
+        min-idle: 5
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  type-aliases-package: ohmygod.project.seckill.entity
+logging:
+  level:
+    ohmygod.project.mapper: debug
+
+jwt:
+  location: "classpath:your-keystore.jks"
+  alias: your-keystore
+  password: zhouxinji.119
+  tokenTTL: 30m
