@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dawn.seckilldemo.mapper.OrderMapper">
+<mapper namespace="ohmygod.project.mapper.OrderMapper">
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.hspedu.seckill.pojo.Order">
+    <resultMap id="BaseResultMap" type="ohmygod.project.entity.Order">
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
         <result column="goods_id" property="goodsId" />
@@ -16,7 +16,7 @@
         <result column="create_date" property="createDate" />
         <result column="pay_date" property="payDate" />
     </resultMap>
-    <sql id="Base_Column_List">
-        id, user_id, goods_id, delivery_addr_id, goods_name, goods_count, goods_price, order_channel, status, create_date, pay_date
-    </sql>
+    <!--<sql id="Base_Column_List">-->
+    <!--    id, user_id, goods_id, delivery_addr_id, goods_name, goods_count, goods_price, order_channel, status, create_date, pay_date-->
+    <!--</sql>-->
 </mapper>

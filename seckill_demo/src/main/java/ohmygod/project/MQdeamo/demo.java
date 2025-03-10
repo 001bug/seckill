@@ -1,4 +1,4 @@
-package ohmygod.project.deamo;
+package ohmygod.project.MQdeamo;
 
 public enum demo implements hello{
     USER("用户", "user");

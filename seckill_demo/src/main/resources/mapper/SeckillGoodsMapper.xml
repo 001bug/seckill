@@ -11,7 +11,7 @@
         <result column="start_date" property="startDate" />
         <result column="end_date" property="endDate" />
     </resultMap>
-    <sql id="Base_Column_List">
-        id,goods_id,seckill_price,stock_count,start_date,end_date
-    </sql>
+    <!--<sql id="Base_Column_List">-->
+    <!--    id,goods_id,seckill_price,stock_count,start_date,end_date-->
+    <!--</sql>-->
 </mapper>

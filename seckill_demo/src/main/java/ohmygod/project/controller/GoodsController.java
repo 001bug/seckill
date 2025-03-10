@@ -8,7 +8,9 @@ import ohmygod.project.service.UserService;
 import ohmygod.project.utils.JwtTool;
 import ohmygod.project.vo.GoodsVo;
 import ohmygod.project.vo.LoginDto;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +34,14 @@ public class GoodsController {
     private UserService userService;
     @Resource
     private ohmygod.project.service.GoodsService goodsService;
+
+    @Resource
+    private RedisTemplate redisTemplate;
+
+    public String toList(User user,HttpServletResponse response,HttpServletRequest request){
+        ValueOperations valueOperations=redisTemplate.opsForValue();
+        return null;
+    }
     @RequestMapping("/toList")
     public String toList(LoginDto dto, HttpServletRequest request, HttpServletResponse response){
         String authHeader=request.getHeader("Authorization");
@@ -43,7 +53,6 @@ public class GoodsController {
             log.warn(e.getMessage());
             return null;
         }
-
         return "goodsList";
     }
     @RequestMapping("/toDetail/{goodsId}")

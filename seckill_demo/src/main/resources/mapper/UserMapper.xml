@@ -12,7 +12,5 @@
         <result column="last_login_date" property="lastLoginDate"/>
         <result column="login_count" property="loginCount"/>
     </resultMap>
-    <sql id="Base_Column_List">
-        id,nickname,password,slat,head,register_data,last_login_date,login_count
-    </sql>
+
 </mapper>

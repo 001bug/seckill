@@ -1,6 +1,6 @@
-package ohmygod.project.deamo;
+package ohmygod.project.MQdeamo;
 
-import static ohmygod.project.deamo.hello.*;
+import static ohmygod.project.MQdeamo.hello.*;
 
 public class interface_values {
     public static void main(String[] args){

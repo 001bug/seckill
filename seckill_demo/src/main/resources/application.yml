@@ -27,13 +27,38 @@ spring:
         max-wait: 10000ms
         max-idle: 200
         min-idle: 5
+  rabbitmq:
+    host: 127.0.0.1
+    username: guest
+    password: guest
+    #选的虚拟主机
+    virtual-host: /
+    port: 5672
+    listener:
+      simple:
+        #至少启动是个线程来处理客户端请求
+        concurrency: 10
+        #最多是个线程处理请求
+        max-concurrency: 10
+        #限制消费者积压太多的消息,比如数据库,应该等数据处理完后,mq才继续推送消息
+        prefetch: 1
+        #启动时,是否默认启动容器
+        auto-startup: true
+        #被拒绝时是否重新进入队列
+        default-requeue-rejected: true
+    template:
+      retry:
+        enabled: true
+        initial-interval: 1000ms
+        max-attempts: 3
+        max-interval: 10000ms
+        multiplier: 1
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*Mapper.xml
-  type-aliases-package: ohmygod.project.seckill.entity
+  type-aliases-package: ohmygod.project.entity
 logging:
   level:
     ohmygod.project.mapper: debug
-
 jwt:
   location: "classpath:your-keystore.jks"
   alias: your-keystore

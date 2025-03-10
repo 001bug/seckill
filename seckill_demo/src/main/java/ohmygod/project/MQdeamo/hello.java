@@ -1,4 +1,4 @@
-package ohmygod.project.deamo;
+package ohmygod.project.MQdeamo;
 
 public interface hello {
     public void hello();
