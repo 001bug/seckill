@@ -16,7 +16,8 @@ public enum RespBeanEnum {
     MOBILE_ERROR(500211, "手机号码格式不正确"),
     BING_ERROR(500212, "参数绑定异常"),
     MOBILE_NOT_EXIST(500213, "手机号码不存在"),
-    PASSWORD_UPDATE_FAIL(500214, "更新密码失败");
+    PASSWORD_UPDATE_FAIL(500214, "更新密码失败"),
+    REQUEST_ILLAGAL(500215, "请求非法");
     private final Integer code;
     private final String message;
 }
